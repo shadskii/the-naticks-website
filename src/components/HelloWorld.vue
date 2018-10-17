@@ -1,8 +1,13 @@
 <template>
   <v-container fluid>
     <v-slide-y-transition mode="out-in">
-      <v-layout column align-center>
-        <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
+      <v-layout
+        column
+        align-center>
+        <img
+          src="@/assets/logo.png"
+          alt="Vuetify.js"
+          class="mb-5">
         <blockquote>
           &#8220;I’d rather be dead than cool.&#8221;
           <footer>
@@ -19,10 +24,7 @@
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
