@@ -4,10 +4,10 @@
       <v-layout column align-center>
         <img src="@/assets/logo.png" alt="Vuetify.js" class="mb-5">
         <blockquote>
-          &#8220;First, solve the problem. Then, write the code.&#8221;
+          &#8220;I’d rather be dead than cool.&#8221;
           <footer>
             <small>
-              <em>&mdash;John Johnson</em>
+              <em>&mdash;Kurt Cobain</em>
             </small>
           </footer>
         </blockquote>
