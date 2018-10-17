@@ -19,3 +19,21 @@ yarn run build
 ```
 yarn run lint
 ```
+
+# Add this to your settings.json in vscode
+```
+{
+  "eslint.autoFixOnSave": true,
+  "vetur.format.defaultFormatter.js": "vscode-typescript",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    {
+      "language": "vue",
+      "autoFix": true
+    }
+  ],
+  "html.format.enable": false
+}
+
+```
