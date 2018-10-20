@@ -30,21 +30,18 @@
       <v-toolbar-title v-text="title"/>
     </v-toolbar>
     <v-content>
-      <HelloWorld/>
+      <landing />
     </v-content>
-    <v-footer app>
-      <span>&copy; 2018</span>
-    </v-footer>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Landing from './components/Landing';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
+    Landing,
   },
   data() {
     return {
