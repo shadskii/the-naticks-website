@@ -71,7 +71,6 @@
 import logo from '../assets/logo.png';
 import Events from './Events.vue';
 export default {
-  name: 'HelloWorld',
   components: {
     Events,
   },
