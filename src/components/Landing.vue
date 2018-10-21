@@ -46,15 +46,6 @@
           <v-icon>mdi-twitter</v-icon>
         </v-btn>
       </v-layout>
-      <blockquote>
-        &#8220;I’d rather be dead than cool.&#8221;
-        <footer>
-          <small>
-            <em>&mdash;Kurt Cobain</em>
-          </small>
-        </footer>
-      </blockquote>
-
     </v-layout>
     <v-layout
       row
