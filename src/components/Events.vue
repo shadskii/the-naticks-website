@@ -8,15 +8,20 @@
       <v-list-tile
         v-for="event in events"
         :key="event.date"
-        three-line>
+        three-line
+      >
         <v-list-tile-content>
           <v-list-tile-title>
-            {{ `${event.date} - ${event.venue} - ${event.location}` }}
+            {{ event.date }}
           </v-list-tile-title>
+          <v-list-tile-sub-title>
+            {{ `${event.venue} - ${event.location}` }}
+          </v-list-tile-sub-title>
           <v-list-tile-sub-title>
             {{ event.description }}
           </v-list-tile-sub-title>
         </v-list-tile-content>
+
       </v-list-tile>
     </v-list>
   </v-card>
