@@ -23,6 +23,8 @@ export default {
   },
   data() {
     return {
+      drawer: false,
+      items: [],
       title: 'The Naticks',
     };
   },
