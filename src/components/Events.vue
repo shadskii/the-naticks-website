@@ -50,10 +50,7 @@ export default {
   data() {
     return {
       events: [
-        new Event('October 20th', 'Ocean Mist', 'Matunuck, RI', 'Full band set at 9:30PM'),
-        new Event('October 26th', 'AS220', 'Providence, RI', ''),
-        new Event('November 3rd', 'The Guild', 'Pawtucket, RI', 'Acoustic set from 4:30 to 6:30'),
-        new Event('November 10th', 'Parlor Bar and Kitchen', 'Newport, RI', ''),
+        new Event('November 10th', 'Parlor Bar and Kitchen', 'Newport, RI', 'Full band set at 9:30PM'),
         new Event('November 24th', 'The Guild', 'Pawtucket, RI', 'Acoustic set from 4:30 to 6:30'),
         new Event('January 26th', 'Whalers Brewing Company', 'Wakefield, RI', 'Full band set at 8:00PM'),
       ],
