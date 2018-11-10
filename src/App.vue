@@ -8,7 +8,10 @@
       <v-toolbar-title v-text="title"/>
     </v-toolbar>
     <v-content>
-      <router-view />
+      <v-fade-transition
+        leave-absolute>
+        <router-view />
+      </v-fade-transition>
     </v-content>
     <v-navigation-drawer
       v-model="drawer"
