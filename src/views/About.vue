@@ -13,7 +13,7 @@
             The members of The Naticks initially met through Scouting at a young age. Learning of their common interest in music, the band began jamming together in 2007. They first hit the Rhode Island live circuit in 2010 under the name Juice. In 2015, the group changed their name to The Naticks, and began focusing their efforts to writing, gigging, and recording on a more consistent basis. Several changes to the line up have led to the current group that tours today. With a diverse taste in music among the 5, they've worked together to create a unique sound which blends their influences and compliments the high energy atmosphere at their shows.
             <br>
             <br>
-            Though they are not from Natick, the band appreciates the local history and Native American roots. They found the word's meaning (a place of searching) to be representative of themselves as a band and as individuals.​ Now, reinvigorated, The Naticks are ready to explore some new sound and make some serious noise!
+            Though they are not from Natick, the band appreciates the local history and Native American roots. They found the word's meaning (a place of searching) to be representative of themselves as a band and as individuals. Now, reinvigorated, The Naticks are ready to explore some new sound and make some serious noise!
           </v-card-text>
         </v-card>
       </v-flex>
