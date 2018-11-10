@@ -8,6 +8,7 @@
       </v-subheader>
       <v-flex xs12>
         <v-card>
+          <v-img :src="band"/>
           <v-card-text class="body-2">
             The members of The Naticks initially met through Scouting at a young age. Learning of their common interest in music, the band began jamming together in 2007. They first hit the Rhode Island live circuit in 2010 under the name Juice. In 2015, the group changed their name to The Naticks, and began focusing their efforts to writing, gigging, and recording on a more consistent basis. Several changes to the line up have led to the current group that tours today. With a diverse taste in music among the 5, they've worked together to create a unique sound which blends their influences and compliments the high energy atmosphere at their shows.
             <br>
@@ -26,6 +27,33 @@
           :right="index %2 == 0"
         />
       </v-flex>
+      <v-flex xs12>
+        <v-subheader class="title">
+          Addtional Collaborators
+        </v-subheader>
+      </v-flex>
+      <v-flex>
+        <v-layout
+          text-xs-center
+          align-content-center
+          row
+          justify-space-between
+          wrap>
+          <v-flex
+            v-for="a in additional"
+            :key="a.BioCard"
+            xs6>
+            <v-avatar size="100">
+              <v-img
+                :src="a.pic"
+              />
+            </v-avatar>
+            <p
+              class="subheader"
+              v-text="a.bio" />
+          </v-flex>
+        </v-layout>
+      </v-flex>
     </v-layout>
   </v-container>
 </template>
@@ -35,14 +63,19 @@ import ross from '../assets/ross.jpg';
 import telli from '../assets/telli.jpg';
 import nick from '../assets/nick.jpg';
 import drew from '../assets/drew.jpg';
+import barrett from '../assets/barrett.jpg';
+import ethan from '../assets/ethan.jpg';
+import kevin from '../assets/kevin.jpg';
+import marshall from '../assets/marshall.jpg';
 import BioCard from '../components/BioCard.vue';
+import band from '../assets/band.jpg';
 export default {
   components: {
     BioCard,
   },
   data() {
     return {
-      chris,
+      band,
       members: [
         {
           pic: chris,
@@ -63,6 +96,24 @@ export default {
         {
           pic: drew,
           bio: 'Drew Croll is a semi-self taught bassist who spends the majority of his time not playing the bass, but rather slapping it silly. Well known for his high voltage stage antics, Drew kicks up the energy of The Natick\'s live performances. He enjoys outdoor adventures, a variety of sports and relaxing with friends. He graduated from the University of Rhode Island with degrees in Economics and Political Science.',
+        },
+      ],
+      additional: [
+        {
+          pic: ethan,
+          bio: 'Ethan Lyons - Drums and Percussion',
+        },
+        {
+          pic: kevin,
+          bio: 'Kevin Drumm - Drums and Percussion',
+        },
+        {
+          pic: barrett,
+          bio: 'Barrett Jourdan - Saxophone ',
+        },
+        {
+          pic: marshall,
+          bio: 'Marshall Ross - Production',
         },
       ],
     };

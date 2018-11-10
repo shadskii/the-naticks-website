@@ -1,23 +1,25 @@
 <template>
   <v-card>
+    <v-img
+      v-if="$vuetify.breakpoint.xsOnly"
+      :src="pic"
+    />
     <v-card-text>
       <v-layout
         :reverse="right"
+
         row
         wrap>
         <v-flex
-          justify-center
+          text-xs-center
           lg2
           md3
           sm4
           xs12>
-          <v-avatar
-            size="180">
-            <v-img
-              :src="pic"
-              contain
-            />
-          </v-avatar>
+          <v-img
+            v-if="$vuetify.breakpoint.smAndUp"
+            :src="pic"
+          />
         </v-flex>
         <v-flex
           lg10
