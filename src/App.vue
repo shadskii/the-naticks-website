@@ -4,11 +4,26 @@
       color="primary"
       app
     >
+      <v-toolbar-side-icon @click="drawer = !drawer" />
       <v-toolbar-title v-text="title"/>
     </v-toolbar>
     <v-content>
-      <landing />
+      <router-view />
     </v-content>
+    <v-navigation-drawer
+      v-model="drawer"
+      app>
+      <v-list>
+        <v-list-tile
+          v-for="item in items"
+          :key="item.name"
+          :to="item.link">
+          <v-list-tile-content>
+            {{ item.name }}
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
   </v-app>
 </template>
 
@@ -23,7 +38,16 @@ export default {
   data() {
     return {
       drawer: false,
-      items: [],
+      items: [
+        {
+          name: 'Home',
+          link: '/',
+        },
+        {
+          name: 'Our Story',
+          link: '/about',
+        },
+      ],
       title: 'The Naticks',
     };
   },
