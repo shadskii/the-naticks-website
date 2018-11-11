@@ -27,33 +27,12 @@
   </v-card>
 </template>
 <script>
-
-/**
- * An event to be displayed
- */
-class Event {
-  /**
-     * @param {String} date human readable date.
-     * @param {String} venue venue name
-     * @param {String} location general location
-     * @param {String} description description of event.
-     */
-  constructor(date, venue, location, description) {
-    this.date = date;
-    this.venue = venue;
-    this.location= location;
-    this.description = description;
-  }
-}
+import shows from '../shows';
 
 export default {
   data() {
     return {
-      events: [
-        new Event('November 10th', 'Parlor Bar and Kitchen', 'Newport, RI', 'Full band set at 9:30PM'),
-        new Event('November 24th', 'The Guild', 'Pawtucket, RI', 'Acoustic set from 4:30 to 6:30'),
-        new Event('January 26th', 'Whalers Brewing Company', 'Wakefield, RI', 'Full band set at 8:00PM'),
-      ],
+      events: shows,
     };
   },
 };
