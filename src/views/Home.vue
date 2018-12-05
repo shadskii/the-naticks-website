@@ -45,6 +45,13 @@
           class="body-2">
           <v-icon>mdi-twitter</v-icon>
         </v-btn>
+        <v-btn
+          fab
+          icon
+          href="https://open.spotify.com/artist/1D14VtvKBELGGkmqhDCnwU"
+          class="body-2">
+          <v-icon>mdi-spotify</v-icon>
+        </v-btn>
       </v-layout>
     </v-layout>
     <v-layout
