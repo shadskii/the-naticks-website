@@ -1,12 +1,28 @@
 <template>
   <v-app dark>
     <v-toolbar
-      color="primary"
+      :extended="iosPwa"
+      :extension-height="iosPwa && iphoneX ? 44 : 20"
       app
+      color="primary"
     >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-toolbar-title v-text="title"/>
+      <div
+        v-if="iosPwa"
+        slot="extension"
+        class="pb-3"
+      >
+        <span
+          class="headline text-uppercase font-weight-medium"
+          v-text="title"
+        />
+      </div>
+      <v-toolbar-title
+        v-else
+        class="headline text-uppercase font-weight-medium"
+        v-text="title"
+      />
     </v-toolbar>
+
     <v-content>
       <v-fade-transition
         leave-absolute>
@@ -31,16 +47,17 @@
 </template>
 
 <script>
-import Landing from './components/Landing';
-
+import {isIphoneX, isPwa, isIos} from './phoneDetection';
 export default {
   name: 'App',
   components: {
-    Landing,
   },
   data() {
     return {
       drawer: false,
+      title: 'The Naticks',
+      iphoneX: isIphoneX(),
+      iosPwa: isPwa() && isIos(),
       items: [
         {
           name: 'Home',
