@@ -68,8 +68,13 @@ export default {
           link: '/about',
         },
       ],
-      title: 'The Naticks',
     };
   },
 };
 </script>
+<style>
+body{
+  background-color: #303030;
+}
+</style>
+
