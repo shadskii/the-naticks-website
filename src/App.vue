@@ -34,10 +34,10 @@
       </v-toolbar-items>
     </v-toolbar>
 
-    <v-content>
+    <v-content >
       <v-fade-transition
         leave-absolute>
-        <router-view />
+        <router-view class="pad-nav-bottom"/>
       </v-fade-transition>
     </v-content>
 
@@ -97,6 +97,9 @@ export default {
 <style>
 body{
   background-color: #303030;
+}
+.pad-nav-bottom{
+  padding-bottom: 95px;
 }
 </style>
 
