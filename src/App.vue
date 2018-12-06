@@ -21,6 +21,17 @@
         class="headline text-uppercase font-weight-medium"
         v-text="title"
       />
+      <v-spacer/>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn
+          v-for="p in pages"
+          :key="`${p.name}-toolbar`"
+          :to="p.link"
+          flat
+        >
+          {{ p.name }}
+        </v-btn>
+      </v-toolbar-items>
     </v-toolbar>
 
     <v-content>
@@ -29,7 +40,7 @@
         <router-view />
       </v-fade-transition>
     </v-content>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       v-model="drawer"
       app>
       <v-list>
@@ -42,7 +53,24 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
+    <v-bottom-nav
+      :value="showNav"
+      fixed
+      height="75"
+    >
+      <v-btn
+        v-for="p in pages"
+        :key="`${p.name}`"
+        :to="p.link"
+        flat
+        exact
+        color="primary"
+      >
+        <span>{{ p.name }}</span>
+        <v-icon>{{ p.icon }}</v-icon>
+      </v-btn>
+    </v-bottom-nav>
   </v-app>
 </template>
 
@@ -58,17 +86,24 @@ export default {
       title: 'The Naticks',
       iphoneX: isIphoneX(),
       iosPwa: isPwa() && isIos(),
-      items: [
+      pages: [
         {
           name: 'Home',
           link: '/',
+          icon: 'mdi-home',
         },
         {
           name: 'Our Story',
           link: '/about',
+          icon: 'mdi-book-open-page-variant',
         },
       ],
     };
+  },
+  computed: {
+    showNav() {
+      return this.$vuetify.breakpoint.smAndDown;
+    },
   },
 };
 </script>

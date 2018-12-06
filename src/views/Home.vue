@@ -9,7 +9,10 @@
           :src="logo"
           class="img-circle elevation-7 mb-1">
       </v-avatar>
-      <v-layout justify-space-between>
+      <v-layout
+        justify-space-around
+        row
+        wrap>
         <v-btn
           fab
           icon
