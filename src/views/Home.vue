@@ -14,46 +14,13 @@
         row
         wrap>
         <v-btn
+          v-for="m in media"
+          :key="m.link"
+          :href="m.link"
           fab
           icon
-          href="https://www.snapchat.com/add/thenaticks"
           class="body-2">
-          <v-icon>mdi-snapchat</v-icon>
-        </v-btn>
-        <v-btn
-          fab
-          icon
-          href="https://www.instagram.com/thenaticks/"
-          class="body-2">
-          <v-icon>mdi-instagram</v-icon>
-        </v-btn>
-        <v-btn
-          fab
-          icon
-          href="https://soundcloud.com/the-naticks"
-          class="body-2">
-          <v-icon>mdi-soundcloud</v-icon>
-        </v-btn>
-        <v-btn
-          fab
-          icon
-          href="https://www.facebook.com/TheNaticks/"
-          class="body-2">
-          <v-icon>mdi-facebook</v-icon>
-        </v-btn>
-        <v-btn
-          fab
-          icon
-          href="https://twitter.com/TheNaticks"
-          class="body-2">
-          <v-icon>mdi-twitter</v-icon>
-        </v-btn>
-        <v-btn
-          fab
-          icon
-          href="https://open.spotify.com/artist/1D14VtvKBELGGkmqhDCnwU"
-          class="body-2">
-          <v-icon>mdi-spotify</v-icon>
+          <v-icon>{{ m.icon }}</v-icon>
         </v-btn>
       </v-layout>
     </v-layout>
@@ -79,6 +46,32 @@ export default {
   data() {
     return {
       logo: logo,
+      media: [
+        {
+          icon: 'mdi-snapchat',
+          link: 'https://www.snapchat.com/add/thenaticks',
+        },
+        {
+          icon: 'mdi-instagram',
+          link: 'https://www.instagram.com/thenaticks/',
+        },
+        {
+          icon: 'mdi-soundcloud',
+          link: 'https://soundcloud.com/the-naticks',
+        },
+        {
+          icon: 'mdi-facebook',
+          link: 'https://www.facebook.com/TheNaticks/',
+        },
+        {
+          icon: 'mdi-twitter',
+          link: 'https://twitter.com/TheNaticks',
+        },
+        {
+          icon: 'mdi-spotify',
+          link: 'https://open.spotify.com/artist/1D14VtvKBELGGkmqhDCnwU',
+        },
+      ],
     };
   },
 };
