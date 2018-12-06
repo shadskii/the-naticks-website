@@ -40,20 +40,7 @@
         <router-view />
       </v-fade-transition>
     </v-content>
-    <!-- <v-navigation-drawer
-      v-model="drawer"
-      app>
-      <v-list>
-        <v-list-tile
-          v-for="item in items"
-          :key="item.name"
-          :to="item.link">
-          <v-list-tile-content>
-            {{ item.name }}
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer> -->
+
     <v-bottom-nav
       :value="showNav"
       fixed
