@@ -17,16 +17,26 @@
           </v-card-text>
         </v-card>
       </v-flex>
-      <v-flex
-        v-for="(mem,index) in members"
-        :key="mem.bio"
-        xs12>
-        <bio-card
-          :pic="mem.pic"
-          :bio="mem.bio"
-          :right="index %2 == 0"
-        />
-      </v-flex>
+      <v-layout
+        text-xs-center
+        align-content-center
+        row
+        justify-center
+        wrap>
+        <v-flex
+          v-for="(mem,index) in members"
+          :key="mem.bio"
+          xs12
+          sm10
+          md10
+          lg6>
+          <bio-card
+            :pic="mem.pic"
+            :bio="mem.bio"
+            :right="index %2 == 0"
+          />
+        </v-flex>
+      </v-layout>
       <v-flex xs12>
         <v-subheader class="title">
           Addtional Collaborators
