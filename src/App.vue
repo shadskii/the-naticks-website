@@ -84,6 +84,11 @@ export default {
           link: '/about',
           icon: 'mdi-book-open-page-variant',
         },
+        {
+          name: 'Blog',
+          link: '/blog',
+          icon: 'mdi-book-open-page-variant',
+        },
       ],
     };
   },
