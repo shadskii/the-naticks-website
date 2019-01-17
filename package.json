@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
-    "@mdi/font": "^2.6.95",
+    "@mdi/font": "^3.3.92",
     "register-service-worker": "^1.0.0",
     "roboto-fontface": "*",
     "vue": "^2.5.22",
