@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-layout
       row
       wrap
@@ -9,21 +9,31 @@
         v-for="p in posts"
         :key="p.title"
         class="pb-3"
-        xs10>
-        <v-card >
-          <v-card-title v-text="p.title" />
-          <v-card-text v-text="p.content" />
-        </v-card>
+        xs12>
+        <blog-post :post="p"/>
       </v-flex>
     </v-layout>
   </v-container>
 </template>
 <script>
+import BlogPost from '../components/BlogPost.vue';
+import axios from 'axios';
+const blogApi = 'https://public-api.wordpress.com/rest/v1/sites/thenaticksblog.wordpress.com/posts';
 export default {
+  components: {
+    BlogPost,
+  },
   data() {
     return {
-      posts: Array(10).fill(1).map((v, i)=> ({title: `post: ${i}`, content: `content content`})),
+      posts: [],
     };
+  },
+  mounted() {
+    axios
+        .get(blogApi).then((res) =>{
+          this.posts = res.data.posts;
+        })
+        .catch((error) => console.log(error));
   },
 };
 </script>
