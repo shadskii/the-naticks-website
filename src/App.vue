@@ -12,15 +12,23 @@
         class="pb-3"
       >
         <span
-          class="headline text-uppercase font-weight-medium"
-          v-text="title"
-        />
+          class="headline text-uppercase font-weight-light"
+        >The </span>
+        <span
+          class="headline text-uppercase font-weight-bold"
+        >Naticks</span>
       </div>
       <v-toolbar-title
         v-else
         class="headline text-uppercase font-weight-medium"
-        v-text="title"
-      />
+      >
+        <span
+          class="headline text-uppercase font-weight-light"
+        >The </span>
+        <span
+          class="headline text-uppercase font-weight-bold"
+        >Naticks</span>
+      </v-toolbar-title>
       <v-spacer/>
       <v-toolbar-items class="hidden-sm-and-down">
         <v-btn
@@ -70,7 +78,6 @@ export default {
   data() {
     return {
       drawer: false,
-      title: 'The Naticks',
       iphoneX: isIphoneX(),
       iosPwa: isPwa() && isIos(),
       pages: [
