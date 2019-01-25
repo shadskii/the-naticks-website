@@ -21,8 +21,18 @@ export default new Router({
     },
     {
       path: '/blog',
-      name: 'blog',
-      component: () => import(/* webpackChunkName: "about" */ './views/Blog.vue'),
+      component: () => import(/* webpackChunkName: "blog" */ './views/Blog.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import(/* webpackChunkName: "blog-gallery" */ './components/BlogGallery.vue'),
+        },
+        {
+          path: 'post/:id',
+          component: () => import(/* webpackChunkName: "blog-view" */ './components/BlogPostDetail.vue'),
+        },
+
+      ],
     },
   ],
 });
