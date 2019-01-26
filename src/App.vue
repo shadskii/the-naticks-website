@@ -53,6 +53,7 @@
       :value="showNav"
       fixed
       height="75"
+      mandatory
     >
       <v-btn
         v-for="p in pages"
@@ -89,7 +90,7 @@ export default {
         {
           name: 'Our Story',
           link: '/about',
-          icon: 'mdi-book-open-page-variant',
+          icon: 'mdi-account-multiple',
         },
         {
           name: 'Blog',

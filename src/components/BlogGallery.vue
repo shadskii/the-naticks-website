@@ -1,5 +1,7 @@
 <template>
-  <v-container fluid>
+  <v-container
+    fluid
+    grid-list-lg>
     <v-layout
       row
       wrap
@@ -9,7 +11,8 @@
         v-for="p in posts"
         :key="p.title"
         class="pb-3"
-        xs12>
+        xs12
+        lg6>
         <blog-post :post="p"/>
       </v-flex>
     </v-layout>
@@ -32,8 +35,7 @@ export default {
     axios
         .get(blogApi).then((res) =>{
           this.posts = res.data.posts;
-        })
-        .catch((error) => console.log(error));
+        });
   },
 };
 </script>

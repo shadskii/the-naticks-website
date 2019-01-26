@@ -4,11 +4,18 @@
       row
       wrap
       justify-center
-      text-xs-center>
+      text-xs-center
+    >
       <v-flex
         v-if="post"
         class="pb-3"
-        xs12>
+        xs12
+        lg7
+      >
+        <p
+          class="display-1 font-weight-bold pb-3"
+          v-html="post.title"
+        />
         <div v-html="post.content" />
       </v-flex>
     </v-layout>
@@ -16,24 +23,27 @@
 </template>
 <script>
 import axios from 'axios';
-const blogApi = 'https://public-api.wordpress.com/rest/v1/sites/thenaticksblog.wordpress.com/posts';
+const blogApi =
+  'https://public-api.wordpress.com/rest/v1/sites/thenaticksblog.wordpress.com/posts';
 export default {
-  props: {
-
-  },
+  props: {},
   data() {
     return {
       post: undefined,
     };
   },
   mounted() {
-    console.log(this.$route.params);
-    axios
-        .get(`${blogApi}/${this.$route.params.id}`).then((res) =>{
-          this.post = res.data;
-        })
-        .catch((error) => console.log(error));
+    axios.get(`${blogApi}/${this.$route.params.id}`).then((res) => {
+      this.post = res.data;
+    });
   },
 };
 </script>
+<style>
+.size-full {
+  height: 100%;
+  width: 100%;
+}
+</style>
+
 
