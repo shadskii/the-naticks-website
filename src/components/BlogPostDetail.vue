@@ -13,10 +13,12 @@
         lg7
       >
         <p
-          class="display-1 font-weight-bold pb-3"
+          class="display-1 font-weight-bold pb-3 "
           v-html="post.title"
         />
-        <div v-html="post.content" />
+        <div
+          class="subheading text-xs-left"
+          v-html="post.content"/>
       </v-flex>
     </v-layout>
   </v-container>
