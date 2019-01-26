@@ -23,10 +23,11 @@
 </template>
 <script>
 import axios from 'axios';
+import {mapMutations} from 'vuex';
+
 const blogApi =
   'https://public-api.wordpress.com/rest/v1/sites/thenaticksblog.wordpress.com/posts';
 export default {
-  props: {},
   data() {
     return {
       post: undefined,
@@ -36,6 +37,12 @@ export default {
     axios.get(`${blogApi}/${this.$route.params.id}`).then((res) => {
       this.post = res.data;
     });
+    this.setBackNavigation(true);
+  },
+  methods: {
+    ...mapMutations([
+      'setBackNavigation',
+    ]),
   },
 };
 </script>

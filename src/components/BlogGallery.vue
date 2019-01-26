@@ -21,6 +21,8 @@
 <script>
 import BlogPost from './BlogPost.vue';
 import axios from 'axios';
+import {mapMutations} from 'vuex';
+
 const blogApi = 'https://public-api.wordpress.com/rest/v1/sites/thenaticksblog.wordpress.com/posts';
 export default {
   components: {
@@ -36,6 +38,12 @@ export default {
         .get(blogApi).then((res) =>{
           this.posts = res.data.posts;
         });
+    this.setBackNavigation(false);
+  },
+  methods: {
+    ...mapMutations([
+      'setBackNavigation',
+    ]),
   },
 };
 </script>

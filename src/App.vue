@@ -6,6 +6,18 @@
       app
       color="primary"
     >
+      <v-fab-transition>
+        <v-btn
+          v-if="backNavigation"
+          flat
+          icon
+          @click="$router.go(-1)"
+        >
+          <v-icon>
+            mdi-arrow-left
+          </v-icon>
+        </v-btn>
+      </v-fab-transition>
       <div
         v-if="iosPwa"
         slot="extension"
@@ -72,6 +84,7 @@
 
 <script>
 import {isIphoneX, isPwa, isIos} from './phoneDetection';
+import {mapState} from 'vuex';
 export default {
   name: 'App',
   components: {
@@ -104,6 +117,9 @@ export default {
     showNav() {
       return this.$vuetify.breakpoint.smAndDown;
     },
+    ...mapState([
+      'backNavigation',
+    ]),
   },
 };
 </script>
