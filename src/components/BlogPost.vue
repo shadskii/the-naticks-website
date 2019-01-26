@@ -1,13 +1,20 @@
 <template>
-  <v-card @click.native="toDetail()">
-    <v-card-title
-      class="title"
-      v-html="title"/>
-    <v-img :src="featureImage" />
-    <v-card-text
-      class="body-2 font-weight-light"
-      v-html="excerpt" />
-  </v-card>
+  <v-hover>
+    <v-card
+      slot-scope="{ hover }"
+      :class="`elevation-${hover ? 12 : 2}`"
+      @click.native="toDetail()">
+      <v-card-title
+        class="title"
+        v-html="title"/>
+      <v-img
+        :src="featureImage"
+        max-height="400px"/>
+      <v-card-text
+        class="body-2 font-weight-light"
+        v-html="excerpt" />
+    </v-card>
+  </v-hover>
 </template>
 <script>
 export default {

@@ -5,14 +5,14 @@
     <v-layout
       row
       wrap
-      justify-center
+      justify-left
       text-xs-center>
       <v-flex
         v-for="p in posts"
         :key="p.title"
         class="pb-3"
         xs12
-        lg6>
+        lg4>
         <blog-post :post="p"/>
       </v-flex>
     </v-layout>
