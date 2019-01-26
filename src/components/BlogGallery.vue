@@ -12,6 +12,7 @@
         :key="p.title"
         class="pb-3"
         xs12
+        sm6
         lg4>
         <blog-post :post="p"/>
       </v-flex>
