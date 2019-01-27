@@ -6,7 +6,8 @@
       <v-subheader class="display-1">
         Our Story
       </v-subheader>
-      <v-flex xs12>
+      <v-flex
+        xs12>
         <v-card>
           <v-img :src="band"/>
           <v-card-text class="body-2">
@@ -27,9 +28,9 @@
           v-for="(mem,index) in members"
           :key="mem.bio"
           xs12
-          sm10
+          sm6
           md10
-          lg6>
+          lg4>
           <bio-card
             :pic="mem.pic"
             :bio="mem.bio"
@@ -37,7 +38,8 @@
           />
         </v-flex>
       </v-layout>
-      <v-flex xs12>
+      <v-flex
+        xs12>
         <v-subheader class="title">
           Addtional Collaborators
         </v-subheader>
