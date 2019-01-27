@@ -1,28 +1,31 @@
 <template>
   <div>
-    <h1 class="headline font-weight-light">Upcoming Events</h1>
-    <v-list three-line>
-      <v-list-tile
-        v-for="event in events"
-        :key="event.date"
-        class="mb-2"
-      >
-        <v-list-tile-content>
-          <v-list-tile-title class="font-weight-bold">
-            {{ event.date }}
-          </v-list-tile-title>
+    <h1 class="display-1 font-weight-bold">Upcoming Events</h1>
+    <v-flex
+      v-for="event in events"
+      :key="event.date">
+      <v-layout row >
+        <span
+          v-if="event.date.length < 4"
+          class="display-3 font-weight-black px-2">
+          &nbsp;
+        </span>
+        <span class="display-3 font-weight-black pr-3">
+          {{ event.date }}
+        </span>
 
-          <v-list-tile-sub-title class="text--primary">
+        <v-layout
+          column
+          class="pt-3">
+          <v-flex>
             {{ `${event.venue} - ${event.location}` }}
-          </v-list-tile-sub-title>
-          <v-list-tile-sub-title>
+          </v-flex>
+          <v-flex>
             {{ event.description }}
-          </v-list-tile-sub-title>
-
-        </v-list-tile-content>
-
-      </v-list-tile>
-    </v-list>
+          </v-flex>
+        </v-layout>
+      </v-layout>
+    </v-flex>
   </div>
 </template>
 <script>
@@ -37,5 +40,4 @@ export default {
 };
 </script>
 <style scoped>
-
 </style>

@@ -25,10 +25,12 @@
       </v-layout>
     </v-layout>
     <v-layout
-      row
+      column
       align-center
       justify-space-around>
-      <v-flex lg8>
+      <v-flex
+        sm6
+        lg4>
         <events/>
       </v-flex>
     </v-layout>
