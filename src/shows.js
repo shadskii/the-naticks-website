@@ -18,8 +18,6 @@ class Event {
 }
 
 export default [
-  new Event('1.26', 'Whalers Brewing Company', 'Wakefield, RI', 'Full band set at 8:00PM'),
-  new Event('1.27', 'Jamestown Library', 'Jamestown, RI', 'Full band set from 3:00PM to 4:30PM'),
   new Event('1.31', 'Pumphouse Music Works', 'Wakefield, RI', 'Full band set, details TBA'),
   new Event('2.8', 'Parlor Bar and Kitchen', 'Newport, RI', 'Acoustic set, details TBA'),
   new Event('2.16', 'The Guild', 'Pawtucket, RI', 'Acoustic set from 7:00PM to 9:00PM'),
