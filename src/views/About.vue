@@ -49,7 +49,7 @@
           text-xs-center
           align-content-center
           row
-          justify-space-between
+          justify-center
           wrap>
           <v-flex
             v-for="a in additional"
@@ -79,6 +79,7 @@ import barrett from '../assets/barrett.jpg';
 import ethan from '../assets/ethan.jpg';
 import kevin from '../assets/kevin.jpg';
 import marshall from '../assets/marshall.jpg';
+import jake from '../assets/jake.jpg';
 import BioCard from '../components/BioCard.vue';
 import band from '../assets/band.jpg';
 export default {
@@ -126,6 +127,10 @@ export default {
         {
           pic: marshall,
           bio: 'Marshall Ross - Production',
+        },
+        {
+          pic: jake,
+          bio: 'Jake Hassel -  Webmaster',
         },
       ],
     };
