@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "deploy": "vue-cli-service build && gh-pages -d dist -m ':rocket: Deploy'"
+    "deploy:github": "vue-cli-service build && gh-pages -d dist -m ':rocket: Deploy'",
+    "deploy:production": "vue-cli-service build && firebase deploy --project naticks-dc3bf"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
