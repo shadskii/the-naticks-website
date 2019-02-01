@@ -17,11 +17,16 @@
         <v-layout
           column
           class="pt-3">
-          <v-flex>
-            {{ `${event.venue} - ${event.location}` }}
-          </v-flex>
-          <v-flex>
-            {{ event.description }}
+          <v-flex >
+            <span>
+              <span class="subheading font-weight-medium">
+                {{ `${event.venue} - ${event.location}` }}
+              </span>
+              <br>
+              <span class="body-2 font-weight-thin ">
+                {{ event.description }}
+              </span>
+            </span>
           </v-flex>
         </v-layout>
       </v-layout>
