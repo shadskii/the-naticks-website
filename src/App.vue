@@ -1,59 +1,7 @@
 <template>
   <v-app dark>
-    <v-toolbar
-      :extended="iosPwa"
-      :extension-height="iosPwa && iphoneX ? 44 : 20"
-      app
-      color="primary"
-    >
-      <v-fab-transition>
-        <v-btn
-          v-if="backNavigation"
-          flat
-          icon
-          @click="$router.go(-1)"
-        >
-          <v-icon>
-            mdi-arrow-left
-          </v-icon>
-        </v-btn>
-      </v-fab-transition>
-      <div
-        v-if="iosPwa"
-        slot="extension"
-        class="pb-3"
-      >
-        <span
-          class="headline text-uppercase font-weight-light"
-        >The </span>
-        <span
-          class="headline text-uppercase font-weight-bold"
-        >Naticks</span>
-      </div>
-      <v-toolbar-title
-        v-else
-        class="headline text-uppercase font-weight-medium"
-      >
-        <span
-          class="headline text-uppercase font-weight-light"
-        >The </span>
-        <span
-          class="headline text-uppercase font-weight-bold"
-        >Naticks</span>
-      </v-toolbar-title>
-      <v-spacer/>
-      <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn
-          v-for="p in pages"
-          :key="`${p.name}-toolbar`"
-          :to="p.link"
-          flat
-        >
-          {{ p.name }}
-        </v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
 
+    <the-toolbar />
     <v-content >
       <v-fade-transition
         leave-absolute>
@@ -83,43 +31,23 @@
 </template>
 
 <script>
-import {isIphoneX, isPwa, isIos} from './phoneDetection';
-import {mapState} from 'vuex';
+import TheToolbar from './components/TheToolbar';
+import pages from './views';
 export default {
   name: 'App',
   components: {
+    TheToolbar,
   },
   data() {
     return {
       drawer: false,
-      iphoneX: isIphoneX(),
-      iosPwa: isPwa() && isIos(),
-      pages: [
-        {
-          name: 'Home',
-          link: '/',
-          icon: 'mdi-home',
-        },
-        {
-          name: 'Our Story',
-          link: '/about',
-          icon: 'mdi-account-multiple',
-        },
-        {
-          name: 'Blog',
-          link: '/blog',
-          icon: 'mdi-book-open-page-variant',
-        },
-      ],
+      pages: pages,
     };
   },
   computed: {
     showNav() {
       return this.$vuetify.breakpoint.smAndDown;
     },
-    ...mapState([
-      'backNavigation',
-    ]),
   },
 };
 </script>
