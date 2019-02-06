@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <v-avatar size="200">
       <v-img
         :src="pic"
