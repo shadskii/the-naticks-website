@@ -57,7 +57,8 @@
           <v-flex
             v-for="a in additional"
             :key="a.BioCard"
-            xs6>
+            xs6
+            sm4>
             <v-avatar size="100">
               <v-img
                 :src="a.pic"
