@@ -28,10 +28,6 @@ export default {
       type: String,
       default: '',
     },
-    right: {
-      type: Boolean,
-      default: false,
-    },
   },
 };
 </script>
