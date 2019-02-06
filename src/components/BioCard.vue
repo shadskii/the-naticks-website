@@ -1,12 +1,15 @@
 <template>
-  <div class="text-xs-center">
+  <div class="">
     <v-avatar size="200">
       <v-img
         :src="pic"
       />
     </v-avatar>
-    <p
-      class="subheader font-weight-light"
+    <h1
+      class="headline font-weight-bold pt-1"
+      v-text="name" />
+    <h1
+      class="subheading text-xs-left font-weight-light mx-3"
       v-text="bio" />
   </div>
 </template>
@@ -14,6 +17,10 @@
 export default {
   props: {
     pic: {
+      type: String,
+      default: '',
+    },
+    name: {
       type: String,
       default: '',
     },
