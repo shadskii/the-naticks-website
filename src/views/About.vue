@@ -100,17 +100,17 @@ export default {
         {
           pic: chris,
           name: 'Chris Capuano',
-          bio: 'Chris Capuano is a keyboardist and vocalist that began his musical career in the 1st grade. His first exposure to musical training involved learning to play the piano by ear via Suzuki, a Japanese learning method. After years of classical lessons, Chris decided that rocking out with friends was way more fun and quit piano lessons. He recently graduated from the University of Rhode Island with a degree in Mechanical Engineering and Spanish. In addition to music, Chris enjoys skiing, hiking and traveling.',
+          bio: 'Chris is a keyboardist and vocalist that began his musical career in the 1st grade. His first exposure to musical training involved learning to play the piano by ear via Suzuki, a Japanese learning method. After years of classical lessons, Chris decided that rocking out with friends was way more fun and quit piano lessons. He recently graduated from the University of Rhode Island with a degree in Mechanical Engineering and Spanish. In addition to music, Chris enjoys skiing, hiking and traveling.',
         },
         {
           pic: telli,
           name: 'Telli Quinn',
-          bio: 'Telli Quinn is a vocalist that has been singing and playing piano since she was 10.  She has previously been a part of several choirs and ensembles ranging from a tight-knit group of 12 to a state-wide group of 60 members. Other than playing music, her hobbies include art (painting, drawing, and sculpting) and being by the ocean. As the only female in the group, she adds higher range and accompanying harmony.',
+          bio: 'Telli is a vocalist that has been singing and playing piano since she was 10.  She has previously been a part of several choirs and ensembles ranging from a tight-knit group of 12 to a state-wide group of 60 members. Other than playing music, her hobbies include art (painting, drawing, and sculpting) and being by the ocean. As the only female in the group, she adds higher range and accompanying harmony.',
         },
         {
           pic: ross,
           name: 'Ross MacAndrew',
-          bio: 'Ross MacAndrew has been playing guitar since he was 9, but really stepped up his playing in high school after listening to Hendrix. Through jazz band, ensembles, and impromptu jams he\'s learned to love switching between lead and rhythm. Beyond music, he enjoys hanging outside, comedy, and running. He is a graduate from Northeastern where he studied business and music.',
+          bio: 'Ross has been playing guitar since he was 9, but really stepped up his playing in high school after listening to Hendrix. Through jazz band, ensembles, and impromptu jams he\'s learned to love switching between lead and rhythm. Beyond music, he enjoys hanging outside, comedy, and running. He is a graduate from Northeastern where he studied business and music.',
         },
         {
           pic: nick,
@@ -120,7 +120,7 @@ export default {
         {
           pic: drew,
           name: 'Drew Croll',
-          bio: 'Drew Croll is a semi-self taught bassist who spends the majority of his time not playing the bass, but rather slapping it silly. Well known for his high voltage stage antics, Drew kicks up the energy of The Natick\'s live performances. He enjoys outdoor adventures, a variety of sports and relaxing with friends. He graduated from the University of Rhode Island with degrees in Economics and Political Science.',
+          bio: 'Drew is a semi-self taught bassist who spends the majority of his time not playing the bass, but rather slapping it silly. Well known for his high voltage stage antics, Drew kicks up the energy of The Natick\'s live performances. He enjoys outdoor adventures, a variety of sports and relaxing with friends. He graduated from the University of Rhode Island with degrees in Economics and Political Science.',
         },
       ],
       additional: [
