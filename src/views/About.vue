@@ -114,7 +114,7 @@ export default {
         },
         {
           pic: nick,
-          name: 'Nick',
+          name: 'Nick Powers',
           bio: 'Nick joined The Naticks in the Fall of 2018, and jumped right into action with a number of sets at local festivals, proving his skills as a drummer and ability to learn on the fly. His commitment to music is exemplified by the fact that he is in the process of building his own studio. Nick is a graduate of Rutgers University, and is looking forward to bringing his unique sound and style to the group!',
         },
         {
