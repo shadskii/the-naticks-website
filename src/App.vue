@@ -4,7 +4,7 @@
     <the-toolbar />
     <v-content >
       <v-fade-transition
-        leave-absolute>
+        hide-on-leave>
         <router-view class="pad-nav-bottom"/>
       </v-fade-transition>
     </v-content>
