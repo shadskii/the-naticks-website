@@ -22,6 +22,8 @@
   </v-card>
 </template>
 <script>
+import {mapMutations} from 'vuex';
+
 export default {
   name: 'BlogPost',
   props: {
@@ -40,8 +42,12 @@ export default {
   },
   methods: {
     toDetail() {
+      this.setSubtitle(this.title);
       this.$router.push({path: `/blog/post/${this.id}`});
     },
+    ...mapMutations([
+      'setSubtitle',
+    ]),
   },
 };
 </script>

@@ -35,15 +35,15 @@ export default {
       post: undefined,
     };
   },
-  mounted() {
-    axios.get(`${blogApi}/${this.$route.params.id}`).then((res) => {
+  async mounted() {
+    await axios.get(`${blogApi}/${this.$route.params.id}`).then((res) => {
       this.post = res.data;
+      this.setSubtitle(this.post['title']);
     });
-    this.setBackNavigation(true);
   },
   methods: {
     ...mapMutations([
-      'setBackNavigation',
+      'setSubtitle',
     ]),
   },
 };

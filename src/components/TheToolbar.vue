@@ -1,44 +1,45 @@
 <template>
   <v-toolbar
-    :extended="iosPwa"
-    :extension-height="iosPwa && iphoneX ? 44 : 20"
+    :scroll-off-screen="extended && !iosPwa"
+    :scroll-threshold="60"
+    :height="extensionHeight"
+    :class="toolbarCss"
     app
     color="primary"
   >
+    <v-toolbar-side-icon
+      :class="{'mt-4': iosPwa}"
+      @click="$router.push({path: '/'})">
+      <v-img
+        :src="require('@/assets/natick-a.svg')"
+        contain
+        height="37"/>
+    </v-toolbar-side-icon>
 
-    <v-fab-transition>
-      <v-btn
-        v-if="backNavigation"
-        flat
-        icon
-        @click="$router.go(-1)"
-      >
-        <v-icon>
-          mdi-arrow-left
-        </v-icon>
-      </v-btn>
-    </v-fab-transition>
     <div
-      v-if="iosPwa"
+      v-if="extended"
       slot="extension"
-      class="pb-3"
-    >
+      :class="{'pt-4': iosPwa}"
+      class="text-truncate push-icon-left">
+      <v-btn
+        icon
+        @click="navigateBack()">
+        <v-icon large>mdi-arrow-left</v-icon>
+      </v-btn>
       <span
-        class="headline text-uppercase font-weight-light"
-      >The </span>
-      <span
-        class="headline text-uppercase font-weight-bold"
-      >Naticks</span>
+        class="title mb-5"
+        v-html="subtitle" />
     </div>
+
     <v-toolbar-title
-      v-else
+      :class="{'pt-4': iosPwa}"
       class="headline text-uppercase font-weight-medium"
     >
       <span
-        class="display-1 text-uppercase font-weight-light"
+        class="display-1 font-weight-light"
       >The </span>
       <span
-        class="display-1 text-uppercase font-weight-bold"
+        class="display-1 font-weight-bold"
       >Naticks</span>
     </v-toolbar-title>
     <v-spacer/>
@@ -68,9 +69,42 @@ export default {
     };
   },
   computed: {
+    toolbarCss() {
+      return {
+        'pt-1 mb-4': this.iosPwa,
+        'reset-transform-y': !this.extended,
+        'ios-pwa-transform': this.extended && this.iosPwa,
+      };
+    },
+    extensionHeight() {
+      if (!this.iosPwa) {
+        return undefined;
+      }
+      return (this.iphoneX ? 44 : 37) *2;
+    },
+    extended() {
+      const route = this.$route.fullPath;
+      return route.split('/').length > 2;
+    },
     ...mapState([
-      'backNavigation',
+      'subtitle',
     ]),
+  },
+  methods: {
+    navigateBack() {
+      this.$router.go(-1);
+    },
   },
 };
 </script>
+<style scoped>
+.reset-transform-y{
+  transform: none !important;
+}
+.ios-pwa-transform{
+  transform: translateY(-88px) !important;
+}
+.push-icon-left{
+  transform: translateX(-12px);
+}
+</style>

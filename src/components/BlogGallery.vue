@@ -35,15 +35,15 @@ export default {
     };
   },
   mounted() {
+    this.setSubtitle('');
     axios
-        .get(blogApi).then((res) =>{
+        .get(blogApi).then((res) => {
           this.posts = res.data.posts;
         });
-    this.setBackNavigation(false);
   },
   methods: {
     ...mapMutations([
-      'setBackNavigation',
+      'setSubtitle',
     ]),
   },
 };

@@ -5,10 +5,10 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    backNavigation: false,
+    subtitle: '',
   },
   mutations: {
-    setBackNavigation: (state, back) => (state.backNavigation = back),
+    setSubtitle: (state, title) => (state.subtitle = title),
   },
   actions: {},
 });
