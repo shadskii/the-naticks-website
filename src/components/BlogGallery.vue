@@ -1,5 +1,12 @@
 <template>
+  <v-progress-linear
+    v-if="noPosts"
+    color="white"
+    height="4"
+    class="push-progress"
+    indeterminate />
   <v-container
+    v-else
     fluid
     grid-list-lg>
     <v-layout
@@ -34,6 +41,11 @@ export default {
       posts: [],
     };
   },
+  computed: {
+    noPosts() {
+      return this.posts.length === 0;
+    },
+  },
   mounted() {
     this.setSubtitle('');
     axios
@@ -48,4 +60,8 @@ export default {
   },
 };
 </script>
-
+<style scoped>
+.push-progress{
+  transform:translateY(-15px);
+}
+</style>
