@@ -18,7 +18,6 @@ class Event {
 }
 
 export default [
-  new Event('1.31', 'Pumphouse Music Works', 'Wakefield, RI', 'Full band set, details TBA'),
   new Event('2.8', 'Parlor Bar and Kitchen', 'Newport, RI', 'Acoustic set, details TBA'),
   new Event('2.16', 'The Guild', 'Pawtucket, RI', 'Acoustic set from 7:00PM to 9:00PM'),
   new Event('2.22', 'The Pub', 'Matunuck, RI', 'Acoustic set from 8:30PM to 12:00AM'),
