@@ -1,6 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import About from './views/About.vue';
+import Blog from './views/Blog.vue';
+import Booking from './views/Booking.vue';
+import BlogGallery from './components/BlogGallery.vue';
 
 Vue.use(Router);
 
@@ -14,18 +18,15 @@ const router = new Router({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      component: About,
     },
     {
       path: '/blog',
-      component: () => import(/* webpackChunkName: "blog" */ './views/Blog.vue'),
+      component: Blog,
       children: [
         {
           path: '',
-          component: () => import(/* webpackChunkName: "blog-gallery" */ './components/BlogGallery.vue'),
+          component: BlogGallery,
         },
         {
           path: 'post/:id',
@@ -35,8 +36,8 @@ const router = new Router({
     },
     {
       path: '/booking',
-      name: 'book',
-      component: () => import(/* webpackChunkName: "booking" */ './views/Booking.vue'),
+      name: 'booking',
+      component: Booking,
     },
   ],
 });
