@@ -1,0 +1,248 @@
+<template>
+  <v-slide-y-transition hide-on-leave>
+    <div
+      v-if="submitted"
+      class="mx-auto">
+      <v-img
+        :src="require('@/assets/logo.png')"
+        contain
+        class="mb-2"
+        height="100"/>
+      <h3 class="title font-weight-bold">
+        Thanks for reaching out!
+      </h3>
+      <h3 class="subheading font-weight-light">
+        We'll get back to you as soon as we can!
+      </h3>
+    </div>
+    <v-card
+      v-else
+      class="mx-auto">
+      <v-card-title class="title font-weight-regular justify-space-between">
+        <span>{{ currentTitle }}</span>
+        <span class="grey--text text--lighten-1">{{ step }} / {{ 4 }}</span>
+      </v-card-title>
+      <v-divider />
+      <v-window v-model="step">
+        <v-window-item :value="1">
+          <v-card-text>
+            <v-text-field
+              v-model="name"
+              :rules="nameRules"
+              label="Name"
+              type="text"
+              required
+            />
+            <v-text-field
+              v-model="email"
+              :rules="emailRules"
+              label="Email"
+              type="text"
+              required
+            />
+            <span class="body-2 grey--text text--lighten-1">
+              This is the email we will use to contact you.
+            </span>
+          </v-card-text>
+        </v-window-item>
+
+        <v-window-item :value="2">
+          <div class="pa-3 text-xs-center">
+            <v-text-field
+              v-model="location"
+              :rules="locationRules"
+              label="Venue"
+              type="text"
+              required
+            />
+            <v-textarea
+              v-model="message"
+              label="Tell us about what you need"
+            />
+          </div>
+        </v-window-item>
+
+        <v-window-item :value="3">
+          <v-card-text>
+            <v-combobox
+              slot="activator"
+              v-model="dates"
+              multiple
+              chips
+              small-chips
+              readonly
+              label="Dates Selected"
+            >
+              <template
+                slot="selection"
+                slot-scope="data">
+                <v-chip
+                  close
+                  @input="remove(data.item)"
+                >
+                  <strong>{{ data.item }}</strong>&nbsp;
+                </v-chip>
+              </template>
+            </v-combobox>
+            <v-date-picker
+              v-model="dates"
+              color="primary"
+              multiple
+              no-title
+              full-width
+              scrollable/>
+
+          </v-card-text>
+        </v-window-item>
+
+
+        <!-- Submission page -->
+        <v-window-item :value="4">
+          <div class="pa-3 text-xs-left">
+            <h3 class="subheading font-weight-regular mb-2">{{ location }}</h3>
+            <span
+              v-for="d in dates"
+              :key="d"
+              class="subheading font-weight-regular pr-3">
+              {{ d }}
+            </span>
+            <v-divider/>
+            <h3 class="body-2 font-weight-thin mb-2">{{ message }}</h3>
+            <h3 class="subheading font-weight-light mb-2">{{ name }} - <span class="font-weight-regular">{{ email }}</span></h3>
+
+          </div>
+          <div class="text-xs-right pr-2">
+            <span class="caption grey--text">Hit submit to contact the band</span>
+          </div>
+        </v-window-item>
+      </v-window>
+
+      <v-divider/>
+
+      <v-card-actions>
+        <v-btn
+          :disabled="step === 1"
+          flat
+          @click="step--"
+        >
+          Back
+        </v-btn>
+        <v-spacer/>
+        <v-btn
+          color="primary"
+          depressed
+          @click="next()"
+        >
+          <span v-text="(step < 4) ? 'Next' : 'Submit'" />
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+  <!-- <v-card class="elevation-12">
+    <v-toolbar
+      dark
+      color="primary"
+    >
+      <v-toolbar-title class="headline">Book The Naticks</v-toolbar-title>
+    </v-toolbar>
+    <v-card-text>
+      <v-form
+        ref="form"
+        v-model="valid"
+        lazy-validation
+      >
+        <v-text-field
+          v-model="name"
+          :rules="nameRules"
+          prepend-icon="mdi-account"
+          label="Name"
+          type="text"
+          required
+        />
+        <v-text-field
+          v-model="email"
+          :rules="emailRules"
+          prepend-icon="mdi-email"
+          label="Email"
+          type="text"
+          required
+        />
+        <v-text-field
+          v-model="subject"
+          :rules="subjectRules"
+          prepend-icon="mdi-text-subject"
+          label="Subject"
+          type="text"
+          required
+        />
+        <v-textarea
+          v-model="message"
+          prepend-icon="mdi-message"
+          label="Tell us what you're looking for"
+        />
+      </v-form>
+    </v-card-text>
+    <v-card-actions>
+      <v-spacer />
+      <v-btn
+        color="primary"
+        @click="submit"
+      >
+        Drop Us A line
+      </v-btn>
+    </v-card-actions>
+  </v-card> -->
+  </v-slide-y-transition>
+</template>
+<script>
+export default {
+  data() {
+    return {
+      valid: true,
+      submitted: false,
+      step: 1,
+      menu: false,
+      name: 'jake',
+      dates: ['2018-09-15', '2018-09-20'],
+      nameRules: [
+        (v) => !!v || 'Name is required',
+      ],
+      email: 'jake@hassel.net',
+      emailRules: [
+        (v) => !!v || 'E-mail is required',
+        (v) => /.+@.+/.test(v) || 'E-mail must be valid',
+      ],
+      location: 'Parlor - Newport, RI',
+      locationRules: [
+        (v) => !!v || 'Location is required',
+      ],
+      message: 'lkasdfhoiasdhfoaisdnfaoids faiosdpf jaosipdfj asdiopfj asopdifj adsiofh aospdfh asiopdfh asdiopfh asidofi hasdiopfh asodipfh asodipfh apsodihf aodspfh aosidhf aposidhf aposdihf iaspdhf pasdhoif oasdh f',
+    };
+  },
+  computed: {
+    currentTitle() {
+      switch (this.step) {
+        case 1: return 'Who are you?';
+        case 2: return 'What are you looking for?';
+        case 3: return 'When do you need us?';
+        default: return 'Drop us a line';
+      }
+    },
+  },
+  methods: {
+    submit() {
+      this.submitted = true;
+    },
+    next() {
+      if (this.step < 4) {
+        this.step++;
+      } else {
+        this.submit();
+      }
+    },
+    remove(item) {
+      this.dates.splice(this.dates.indexOf(item), 1);
+      this.dates = [...this.dates];
+    },
+  },
+};
+</script>

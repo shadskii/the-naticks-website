@@ -14,4 +14,9 @@ export default [
     link: '/blog',
     icon: 'mdi-book-open-page-variant',
   },
+  {
+    name: 'Book Us',
+    link: '/booking',
+    icon: 'mdi-music',
+  },
 ];

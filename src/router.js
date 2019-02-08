@@ -31,8 +31,12 @@ const router = new Router({
           path: 'post/:id',
           component: () => import(/* webpackChunkName: "blog-view" */ './components/BlogPostDetail.vue'),
         },
-
       ],
+    },
+    {
+      path: '/booking',
+      name: 'book',
+      component: () => import(/* webpackChunkName: "booking" */ './views/Booking.vue'),
     },
   ],
 });
