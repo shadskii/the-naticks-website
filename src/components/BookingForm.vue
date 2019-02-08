@@ -137,60 +137,6 @@
         </v-btn>
       </v-card-actions>
     </v-card>
-  <!-- <v-card class="elevation-12">
-    <v-toolbar
-      dark
-      color="primary"
-    >
-      <v-toolbar-title class="headline">Book The Naticks</v-toolbar-title>
-    </v-toolbar>
-    <v-card-text>
-      <v-form
-        ref="form"
-        v-model="valid"
-        lazy-validation
-      >
-        <v-text-field
-          v-model="name"
-          :rules="nameRules"
-          prepend-icon="mdi-account"
-          label="Name"
-          type="text"
-          required
-        />
-        <v-text-field
-          v-model="email"
-          :rules="emailRules"
-          prepend-icon="mdi-email"
-          label="Email"
-          type="text"
-          required
-        />
-        <v-text-field
-          v-model="subject"
-          :rules="subjectRules"
-          prepend-icon="mdi-text-subject"
-          label="Subject"
-          type="text"
-          required
-        />
-        <v-textarea
-          v-model="message"
-          prepend-icon="mdi-message"
-          label="Tell us what you're looking for"
-        />
-      </v-form>
-    </v-card-text>
-    <v-card-actions>
-      <v-spacer />
-      <v-btn
-        color="primary"
-        @click="submit"
-      >
-        Drop Us A line
-      </v-btn>
-    </v-card-actions>
-  </v-card> -->
   </v-slide-y-transition>
 </template>
 <script>
@@ -201,21 +147,21 @@ export default {
       submitted: false,
       step: 1,
       menu: false,
-      name: 'jake',
-      dates: ['2018-09-15', '2018-09-20'],
+      name: '',
+      dates: [],
       nameRules: [
         (v) => !!v || 'Name is required',
       ],
-      email: 'jake@hassel.net',
+      email: '',
       emailRules: [
         (v) => !!v || 'E-mail is required',
         (v) => /.+@.+/.test(v) || 'E-mail must be valid',
       ],
-      location: 'Parlor - Newport, RI',
+      location: '',
       locationRules: [
         (v) => !!v || 'Location is required',
       ],
-      message: 'lkasdfhoiasdhfoaisdnfaoids faiosdpf jaosipdfj asdiopfj asopdifj adsiofh aospdfh asiopdfh asdiopfh asidofi hasdiopfh asodipfh asodipfh apsodihf aodspfh aosidhf aposidhf aposdihf iaspdhf pasdhoif oasdh f',
+      message: '',
     };
   },
   computed: {

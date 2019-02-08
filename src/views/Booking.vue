@@ -10,7 +10,6 @@
       justify-space-around
       text-xs-center
     >
-
       <v-flex
         xs12
         sm8
