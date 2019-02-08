@@ -5,6 +5,7 @@ import About from './views/About.vue';
 import Blog from './views/Blog.vue';
 import Booking from './views/Booking.vue';
 import BlogGallery from './components/BlogGallery.vue';
+import BlogPostDetail from './components/BlogPostDetail.vue';
 
 Vue.use(Router);
 
@@ -30,7 +31,7 @@ const router = new Router({
         },
         {
           path: 'post/:id',
-          component: () => import(/* webpackChunkName: "blog-view" */ './components/BlogPostDetail.vue'),
+          component: BlogPostDetail,
         },
       ],
     },
