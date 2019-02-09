@@ -65,24 +65,32 @@
         <v-window-item :value="3">
           <v-card-text class="text-xs-left">
             <h3
+              class="body-2 grey--text text-lighten-1">Dates</h3>
+            <h3
               v-if="dates.length === 0"
-              class="display-1">&nbsp;</h3>
-            <v-chip
-              v-for="d in dates"
-              :key="d"
-              close
-              @input="remove(d)"
-            >
-              <strong>{{ d }}</strong>&nbsp;
-            </v-chip>
+              class="display-1">&nbsp;
+            </h3>
+            <v-fade-transition
+              group
+              hide-on-leave>
+              <v-chip
+                v-for="d in dates"
+                :key="d"
+                close
+                @input="remove(d)"
+              >
+                <strong>{{ d }}</strong>&nbsp;
+              </v-chip>
+            </v-fade-transition>
+            <v-divider />
             <v-date-picker
               v-model="dates"
               color="primary"
               multiple
               no-title
               full-width
-              scrollable/>
-
+              scrollable
+            />
           </v-card-text>
         </v-window-item>
 
