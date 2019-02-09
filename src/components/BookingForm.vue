@@ -23,7 +23,10 @@
         <span class="grey--text text--lighten-1">{{ step }} / {{ 4 }}</span>
       </v-card-title>
       <v-divider />
-      <v-window v-model="step">
+      <v-window
+        v-model="step"
+        touchless
+      >
         <v-window-item :value="1">
           <v-card-text>
             <v-text-field
