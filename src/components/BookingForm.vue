@@ -63,27 +63,18 @@
         </v-window-item>
 
         <v-window-item :value="3">
-          <v-card-text>
-            <v-combobox
-              slot="activator"
-              v-model="dates"
-              multiple
-              chips
-              small-chips
-              readonly
-              label="Dates Selected"
+          <v-card-text class="text-xs-left">
+            <h3
+              v-if="dates.length === 0"
+              class="display-1">&nbsp;</h3>
+            <v-chip
+              v-for="d in dates"
+              :key="d"
+              close
+              @input="remove(d)"
             >
-              <template
-                slot="selection"
-                slot-scope="data">
-                <v-chip
-                  close
-                  @input="remove(data.item)"
-                >
-                  <strong>{{ data.item }}</strong>&nbsp;
-                </v-chip>
-              </template>
-            </v-combobox>
+              <strong>{{ d }}</strong>&nbsp;
+            </v-chip>
             <v-date-picker
               v-model="dates"
               color="primary"
