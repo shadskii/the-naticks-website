@@ -3,6 +3,7 @@
     <div
       v-if="submitted"
       class="mx-auto">
+
       <v-img
         :src="require('@/assets/logo.png')"
         contain
@@ -34,6 +35,14 @@
               :rules="nameRules"
               label="Name"
               type="text"
+              required
+            />
+            <v-text-field
+              v-model="phone"
+              label="Phone"
+              type="phone"
+              mask="phone"
+              placeholder="(###) ###-####"
               required
             />
             <v-text-field
@@ -142,6 +151,8 @@
   </v-slide-y-transition>
 </template>
 <script>
+import {db} from '@/firebase';
+
 export default {
   data() {
     return {
@@ -150,6 +161,7 @@ export default {
       step: 1,
       menu: false,
       name: '',
+      phone: '',
       dates: [],
       nameRules: [
         (v) => !!v || 'Name is required',
@@ -164,21 +176,34 @@ export default {
         (v) => !!v || 'Location is required',
       ],
       message: '',
+      titles: [
+        'Who are you?',
+        'What are you looking for?',
+        'When do you need us?',
+        'Drop us a line!',
+      ],
     };
   },
   computed: {
     currentTitle() {
-      switch (this.step) {
-        case 1: return 'Who are you?';
-        case 2: return 'What are you looking for?';
-        case 3: return 'When do you need us?';
-        default: return 'Drop us a line';
-      }
+      return this.titles[this.step-1];
     },
+    form() {
+      return {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        location: this.location,
+        info: this.message,
+        dates: this.dates,
+      };
+    },
+
   },
   methods: {
     submit() {
       this.submitted = true;
+      db.collection('bookings').add(this.form);
     },
     next() {
       if (this.step < 4) {
