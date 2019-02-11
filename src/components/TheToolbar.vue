@@ -53,12 +53,22 @@
         {{ p.name }}
       </v-btn>
     </v-toolbar-items>
+    <v-fab-transition>
+      <v-btn
+        icon
+        @click="$router.replace('/admin')">
+        <v-icon v-if="adminMode">
+          mdi-account-circle
+        </v-icon>
+      </v-btn>
+    </v-fab-transition>
   </v-toolbar>
 </template>
 <script>
 import {isIphoneX, isPwa, isIos} from '../phoneDetection';
 import {mapState} from 'vuex';
 import pages from '../views';
+import firebase from 'firebase/app';
 export default {
   name: 'TheToolbar',
   data() {
@@ -66,6 +76,7 @@ export default {
       iphoneX: isIphoneX(),
       iosPwa: isPwa() && isIos(),
       pages: pages,
+      adminMode: false,
     };
   },
   computed: {
@@ -89,6 +100,13 @@ export default {
     ...mapState([
       'subtitle',
     ]),
+  },
+  beforeMount() {
+    firebase
+        .auth()
+        .onAuthStateChanged((user) =>{
+          this.adminMode = !!user;
+        });
   },
   methods: {
     navigateBack() {

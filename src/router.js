@@ -40,6 +40,11 @@ const router = new Router({
       name: 'booking',
       component: Booking,
     },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: () => import(/* webpackChunkName: "admin" */ './views/Admin.vue'),
+    },
   ],
 });
 router.afterEach((to, from) => {
