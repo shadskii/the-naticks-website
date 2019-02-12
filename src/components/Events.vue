@@ -3,7 +3,8 @@
     <h1 class="display-1 font-weight-bold">Upcoming Events</h1>
     <v-flex
       v-for="event in events"
-      :key="event.date">
+      :key="event.date"
+    >
       <v-layout row >
         <span
           v-if="event.date.length < 4"
@@ -20,7 +21,7 @@
           <v-flex >
             <span>
               <span class="subheading font-weight-medium">
-                {{ `${event.venue} - ${event.location}` }}
+                <a :href="event.link">{{ `${event.venue}` }}</a> {{ ` - ${event.location}` }}
               </span>
               <br>
               <span class="body-2 font-weight-thin ">
