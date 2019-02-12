@@ -40,8 +40,13 @@ import shows from '../shows';
 export default {
   data() {
     return {
-      events: shows,
+      events: shows.map((ev) => Object.assign({}, ev, {date: this.formatDate(ev.date)})),
     };
+  },
+  methods: {
+    formatDate(date) {
+      return `${date.getMonth()+1}.${date.getDate()}`;
+    },
   },
 };
 </script>

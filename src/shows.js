@@ -20,8 +20,8 @@ class Event {
 }
 
 export default [
-  new Event('2.16', 'The Guild', 'Pawtucket, RI', 'Acoustic set from 7:00PM to 9:00PM', 'http://theguildri.com/'),
-  new Event('2.22', 'The Pub', 'Matunuck, RI', 'Acoustic set from 8:30PM to 12:00AM', 'https://www.thepubmtk.com/'),
-  new Event('3.13', 'Trillium Brewing Company', 'Canton, MA', 'Acoustic band set from 6:00PM to 8:00PM', 'https://www.trilliumbrewing.com/canton/'),
-  new Event('3.16', 'Ocean Mist', 'Matunuck, RI', 'Live band set from 9:30PM to 1:00AM', 'https://www.oceanmist.net/'),
+  new Event(new Date('2019-02-16 EST'), 'The Guild', 'Pawtucket, RI', 'Acoustic set from 7:00PM to 9:00PM', 'http://theguildri.com/'),
+  new Event(new Date('2019-02-22 EST'), 'The Pub', 'Matunuck, RI', 'Acoustic set from 8:30PM to 12:00AM', 'https://www.thepubmtk.com/'),
+  new Event(new Date('2019-03-13 EST'), 'Trillium Brewing Company', 'Canton, MA', 'Acoustic band set from 6:00PM to 8:00PM', 'https://www.trilliumbrewing.com/canton/'),
+  new Event(new Date('2019-03-16 EST'), 'Ocean Mist', 'Matunuck, RI', 'Live band set from 9:30PM to 1:00AM', 'https://www.oceanmist.net/'),
 ];
