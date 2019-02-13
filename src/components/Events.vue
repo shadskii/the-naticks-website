@@ -8,10 +8,10 @@
       <v-layout row >
         <span
           v-if="event.date.length < 4"
-          class="display-3 font-weight-black px-2">
+          class="display-2 font-weight-black px-2">
           &nbsp;
         </span>
-        <span class="display-3 font-weight-black pr-3">
+        <span class="display-2 pt-3 font-weight-black pr-3">
           {{ event.date }}
         </span>
 
@@ -50,12 +50,15 @@ export default {
   },
   computed: {
     events() {
-      return this.shows.map((ev) => Object.assign({}, ev, {date: this.formatDate(new Date(ev.date))}));
+      return this.shows.map((ev) => Object.assign({}, ev, {date: this.formatDate(ev.date)}));
     },
   },
   methods: {
     formatDate(date) {
-      return `${date.getMonth()+1}.${date.getDate()}`;
+      const split = date.split('-');
+      const month = split[1];
+      const day = split[2].split(' ')[0];
+      return `${month}.${day}`;
     },
   },
 };

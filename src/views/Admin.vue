@@ -1,35 +1,5 @@
 <template>
-  <v-container
-    fluid
-    fill-height
-  >
-    <v-layout
-      :align-center="!authenticated"
-      row
-      wrap
-      justify-space-around
-      text-xs-center
-    >
-      <v-flex
-        xs12
-        sm8
-        md6
-      >
-        <login-form v-if="!authenticated"/>
-        <admin-panel v-else />
-      </v-flex>
-      <v-flex
-        v-if="authenticated"
-        xs9>
-        <admin-shows-list />
-      </v-flex>
-      <v-flex
-        v-if="authenticated"
-        xs8>
-        <admin-shows-add />
-      </v-flex>
-    </v-layout>
-  </v-container>
+  <router-view />
 </template>
 <script>
 import LoginForm from '@/components/LoginForm.vue';

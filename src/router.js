@@ -42,8 +42,21 @@ const router = new Router({
     },
     {
       path: '/admin',
-      name: 'admin',
       component: () => import(/* webpackChunkName: "admin" */ './views/Admin.vue'),
+      children: [
+        {
+          path: '',
+          component: () => import(/* webpackChunkName: "admin-login" */ './components/AdminLogin.vue'),
+        },
+        {
+          path: 'shows',
+          component: () => import(/* webpackChunkName: "admin-shows" */ './components/AdminShowsPage.vue'),
+        },
+        {
+          path: 'settings',
+          component: () => import(/* webpackChunkName: "admin-settings" */ './components/AdminSettings.vue'),
+        },
+      ],
     },
   ],
 });

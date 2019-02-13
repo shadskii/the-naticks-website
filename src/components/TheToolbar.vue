@@ -15,9 +15,24 @@
         contain
         height="37"/>
     </v-toolbar-side-icon>
-
+    <v-tabs
+      v-if="extendedAdminMode"
+      slot="extension"
+      v-model="model"
+      color="primary"
+      slider-color="white"
+    >
+      <v-tab
+        v-for="i in adminTabs"
+        :key="i"
+        :to="`/admin/${i}`"
+        exact
+      >
+        {{ i }}
+      </v-tab>
+    </v-tabs>
     <div
-      v-if="extended"
+      v-else-if="extended"
       slot="extension"
       :class="{'pt-4': iosPwa}"
       class="text-truncate push-icon-left">
@@ -73,10 +88,16 @@ export default {
   name: 'TheToolbar',
   data() {
     return {
+      model: 'tab-2',
       iphoneX: isIphoneX(),
       iosPwa: isPwa() && isIos(),
       pages: pages,
       adminMode: false,
+      adminTabs: [
+        'shows',
+        'bookings',
+        'settings',
+      ],
     };
   },
   computed: {
@@ -96,6 +117,9 @@ export default {
     extended() {
       const route = this.$route.fullPath;
       return route.split('/').length > 2;
+    },
+    extendedAdminMode() {
+      return this.$route.fullPath.includes('admin');
     },
     ...mapState([
       'subtitle',
