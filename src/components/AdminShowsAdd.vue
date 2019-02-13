@@ -93,8 +93,7 @@ export default {
     submit() {
       db.collection('shows')
           .add(this.form)
-          .then((v) => this.clear())
-          .catch((v) => console.log(v));
+          .then((v) => this.clear());
     },
     clear() {
       this.date = null;

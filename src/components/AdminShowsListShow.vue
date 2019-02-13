@@ -86,22 +86,7 @@ export default {
       this.dialog = false;
       db.collection('shows')
           .doc(this.show.id)
-          .delete()
-          .then((v) => console.log(v))
-          .catch((v) => console.error(v));
-    },
-    addAndClose(name) {
-      this.addToCart({
-        name: name,
-        quantity: this.num,
-        instructions: this.instructions,
-      });
-      this.close();
-    },
-    close() {
-      this.num = 1;
-      this.instructions = '';
-      this.panel = false;
+          .delete();
     },
   },
 };
