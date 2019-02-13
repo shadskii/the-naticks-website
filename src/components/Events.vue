@@ -35,13 +35,23 @@
   </div>
 </template>
 <script>
-import shows from '../shows';
+import {db} from '@/firebase';
 
 export default {
   data() {
     return {
-      events: shows.map((ev) => Object.assign({}, ev, {date: this.formatDate(ev.date)})),
+      shows: [],
     };
+  },
+  firestore() {
+    return {
+      shows: db.collection('shows').orderBy('date'),
+    };
+  },
+  computed: {
+    events() {
+      return this.shows.map((ev) => Object.assign({}, ev, {date: this.formatDate(new Date(ev.date))}));
+    },
   },
   methods: {
     formatDate(date) {
