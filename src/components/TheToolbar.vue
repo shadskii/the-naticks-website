@@ -18,7 +18,6 @@
     <v-tabs
       v-if="extendedAdminMode"
       slot="extension"
-      v-model="model"
       color="primary"
       slider-color="white"
     >
@@ -88,7 +87,6 @@ export default {
   name: 'TheToolbar',
   data() {
     return {
-      model: 'tab-2',
       iphoneX: isIphoneX(),
       iosPwa: isPwa() && isIos(),
       pages: pages,
