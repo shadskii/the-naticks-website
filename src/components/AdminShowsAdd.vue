@@ -12,7 +12,6 @@
           ref="menu"
           v-model="menu"
           :close-on-content-click="false"
-          :nudge-right="40"
           :return-value.sync="date"
           lazy
           transition="scale-transition"
@@ -21,8 +20,10 @@
           min-width="290px"
         >
           <v-text-field
+            ref="date"
             slot="activator"
             v-model="date"
+            :rules="[rules.required]"
             label="Date"
             readonly
           />
@@ -34,24 +35,33 @@
             <v-btn
               flat
               color="primary"
+              @click="menu = !menu"
             >Cancel</v-btn>
             <v-btn
               flat
               color="primary"
-              @click="$refs.menu.save(date)">OK</v-btn>
+              @click="dateOk(date)">OK</v-btn>
           </v-date-picker>
         </v-menu>
         <v-text-field
+          ref="venue"
           v-model="venue"
+          :rules="[rules.required]"
           label="Venue Name"/>
         <v-text-field
+          ref="link"
           v-model="link"
+          :rules="[rules.validLink, rules.required]"
           label="Link to Venue"/>
         <v-text-field
+          ref="location"
           v-model="location"
+          :rules="[rules.required]"
           label="Location"/>
         <v-textarea
+          ref="description"
           v-model="description"
+          :rules="[rules.required]"
           label="Description"
           counter/>
 
@@ -88,6 +98,12 @@ export default {
       link: '',
       location: '',
       description: '',
+      rules: {
+        required: (value) => !!value || 'Required.',
+        min: (v) => v.length >= 8 || 'Min 8 characters',
+        validLink: (v) => /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})/.test(v) || 'Link must be in the form http(s)://website.com',
+
+      },
     };
   },
   computed: {
@@ -104,6 +120,16 @@ export default {
   watch: {
     value(nv) {
       this.inner = nv;
+      if (nv) {
+        Object.keys(this.form).forEach((f) => {
+          this.$refs[f].reset();
+        });
+      }
+    },
+    menu(nv) {
+      if (!nv) {
+        this.$refs.date.validate(true);
+      }
     },
     inner(nv) {
       this.$emit('input', nv);
@@ -111,9 +137,22 @@ export default {
   },
   methods: {
     submit() {
-      db.collection('shows')
-          .add(this.form)
-          .then((v) => this.clear());
+      let formHasErrors = false;
+      Object.keys(this.form).forEach((f) => {
+        if (!this.form[f]) {
+          formHasErrors = true;
+        }
+        this.$refs[f].validate(true);
+      });
+      if (!formHasErrors) {
+        db.collection('shows')
+            .add(this.form)
+            .then((v) => this.clear());
+      }
+    },
+    dateOk(date) {
+      this.$refs.date.validate(true);
+      this.$refs.menu.save(date);
     },
     clear() {
       this.inner= false;
