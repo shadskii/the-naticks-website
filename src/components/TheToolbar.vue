@@ -50,10 +50,10 @@
       class="headline text-uppercase font-weight-medium"
     >
       <span
-        class="display-1 font-weight-light"
+        class="font-weight-light"
       >The </span>
       <span
-        class="display-1 font-weight-bold"
+        class=" font-weight-bold"
       >Naticks</span>
     </v-toolbar-title>
     <v-spacer/>
