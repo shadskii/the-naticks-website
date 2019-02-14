@@ -1,6 +1,6 @@
 <template>
   <v-toolbar
-    :scroll-off-screen="extended && !iosPwa"
+    :scroll-off-screen="(extended || extendedAdminMode) && !iosPwa"
     :scroll-threshold="60"
     :height="extensionHeight"
     :class="toolbarCss"
@@ -18,6 +18,7 @@
     <v-tabs
       v-if="extendedAdminMode"
       slot="extension"
+      :class="{'pt-4': iosPwa}"
       color="primary"
       slider-color="white"
     >
@@ -69,9 +70,10 @@
     </v-toolbar-items>
     <v-fab-transition>
       <v-btn
+        :class="{'mt-4': iosPwa}"
         icon
         @click="$router.replace('/admin')">
-        <v-icon v-if="adminMode">
+        <v-icon>
           mdi-account-circle
         </v-icon>
       </v-btn>
@@ -102,8 +104,8 @@ export default {
     toolbarCss() {
       return {
         'pt-1 mb-4': this.iosPwa,
-        'reset-transform-y': !this.extended,
-        'ios-pwa-transform': this.extended && this.iosPwa,
+        'reset-transform-y': !(this.extended || this.extendedAdminMode),
+        'ios-pwa-transform': (this.extended || this.extendedAdminMode) && this.iosPwa,
       };
     },
     extensionHeight() {
