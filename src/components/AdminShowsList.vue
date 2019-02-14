@@ -13,7 +13,7 @@
           <v-list-tile-title>
             {{ show.date }}
           </v-list-tile-title>
-          <v-list-tile-sub-title>{{ show.venue }} - {{ show.location }} - {{ show.link }}</v-list-tile-sub-title>
+          <v-list-tile-sub-title>{{ show.venue }} - {{ show.location }}</v-list-tile-sub-title>
           <v-list-tile-sub-title>{{ show.description }}</v-list-tile-sub-title>
         </v-list-tile-content>
         <v-list-tile-action>
