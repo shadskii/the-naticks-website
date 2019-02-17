@@ -84,7 +84,6 @@ export default {
     return {
       submitted: false,
       valid: false,
-      step: 1,
       name: '',
       phone: '',
       dates: [],
