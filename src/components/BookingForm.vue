@@ -42,7 +42,6 @@
             v-model="phone"
             label="Phone"
             type="phone"
-            mask="phone"
             placeholder="(###) ###-####"
           />
           <v-text-field
