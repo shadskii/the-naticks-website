@@ -78,6 +78,7 @@
 </template>
 <script>
 import {db} from '@/firebase';
+import firebase from 'firebase/app';
 
 export default {
   data() {
@@ -110,13 +111,13 @@ export default {
         info: this.message,
       };
     },
-
   },
   methods: {
     submit() {
       if (this.$refs.form.validate()) {
         this.submitted = true;
-        db.collection('bookings').add(this.form);
+        const timestamp = firebase.firestore.FieldValue.serverTimestamp();
+        db.collection('bookings').add({time: timestamp, ...this.form});
       }
     },
   },
