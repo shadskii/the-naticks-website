@@ -55,7 +55,7 @@
           <v-textarea
             v-model="message"
             :rules="commentsRules"
-            label="Tell us  what you need"
+            label="Tell us what you need"
             required
           />
         </v-form>
