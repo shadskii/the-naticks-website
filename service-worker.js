@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.6d5b6325ff94091944e9594338332483.js"
+  "/the-naticks-website/precache-manifest.26ce65d0c062d32229943d1d968a94da.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "the-naticks-website"});
