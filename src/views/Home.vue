@@ -14,15 +14,21 @@
         justify-space-around
         row
         wrap>
-        <v-btn
+        <v-tooltip
           v-for="m in media"
           :key="m.link"
-          :href="m.link"
-          fab
-          icon
-          class="body-2">
-          <v-icon>{{ m.icon }}</v-icon>
-        </v-btn>
+          bottom>
+          <v-btn
+            slot="activator"
+            :href="m.link"
+            fab
+            icon
+            class="body-2">
+            <v-icon>{{ m.icon }}</v-icon>
+          </v-btn>
+
+          <span> {{ m.name }}</span>
+        </v-tooltip>
       </v-layout>
     </v-layout>
     <v-layout
@@ -51,26 +57,32 @@ export default {
       logo: logo,
       media: [
         {
+          name: 'Snapchat',
           icon: 'mdi-snapchat',
           link: 'https://www.snapchat.com/add/thenaticks',
         },
         {
+          name: 'Instagram',
           icon: 'mdi-instagram',
           link: 'https://www.instagram.com/thenaticks/',
         },
         {
+          name: 'SoundCloud',
           icon: 'mdi-soundcloud',
           link: 'https://soundcloud.com/the-naticks',
         },
         {
+          name: 'Facebook',
           icon: 'mdi-facebook',
           link: 'https://www.facebook.com/TheNaticks/',
         },
         {
+          name: 'Twitter',
           icon: 'mdi-twitter',
           link: 'https://twitter.com/TheNaticks',
         },
         {
+          name: 'Spotify',
           icon: 'mdi-spotify',
           link: 'https://open.spotify.com/artist/1D14VtvKBELGGkmqhDCnwU',
         },
