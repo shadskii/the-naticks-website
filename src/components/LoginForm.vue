@@ -1,5 +1,5 @@
 <template>
-  <v-card>
+  <v-card @keydown.enter="login()">
     <v-card-title class="headline">Login</v-card-title>
     <v-form>
       <v-card-text>
