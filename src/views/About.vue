@@ -9,7 +9,9 @@
       <v-flex
         xs12>
         <v-card>
-          <v-img :src="band"/>
+          <v-img
+            :src="band"
+            alt="The band"/>
           <v-card-text class="subheading">
             The members of The Naticks initially met through Scouting at a young age. Learning of their common interest in music, the band began jamming together in 2007. They first hit the Rhode Island live circuit in 2010 under the name Juice. In 2015, the group changed their name to The Naticks, and began focusing their efforts to writing, gigging, and recording on a more consistent basis. Several changes to the line up have led to the current group that tours today. With a diverse taste in music among the 5, they've worked together to create a unique sound which blends their influences and compliments the high energy atmosphere at their shows.
             <br>
@@ -62,6 +64,7 @@
             <v-avatar size="100">
               <v-img
                 :src="a.pic"
+                :alt="a.name"
               />
             </v-avatar>
             <h1

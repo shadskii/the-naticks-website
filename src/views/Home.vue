@@ -7,6 +7,7 @@
         size="25em">
         <img
           :src="logo"
+          alt="The Naticks Logo"
           class="img-circle elevation-7 mb-1">
       </v-avatar>
       <v-layout

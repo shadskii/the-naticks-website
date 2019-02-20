@@ -2,6 +2,7 @@
   <div>
     <v-avatar size="200">
       <v-img
+        :alt="name"
         :src="pic"
       />
     </v-avatar>
