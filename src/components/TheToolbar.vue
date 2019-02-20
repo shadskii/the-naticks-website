@@ -72,7 +72,7 @@
       <v-btn
         :class="{'mt-4': iosPwa}"
         icon
-        @click="$router.replace('/admin')">
+        @click="$router.replace('/login')">
         <v-icon>
           mdi-account-circle
         </v-icon>
