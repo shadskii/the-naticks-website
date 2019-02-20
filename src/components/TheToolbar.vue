@@ -9,7 +9,9 @@
   >
     <v-toolbar-side-icon
       :class="{'mt-4': iosPwa}"
-      @click="$router.push({path: '/'})">
+      aria-label="Home"
+      to="/"
+    >
       <v-img
         :src="require('@/assets/natick-a.svg')"
         contain
@@ -72,7 +74,8 @@
       <v-btn
         :class="{'mt-4': iosPwa}"
         icon
-        @click="$router.replace('/login')">
+        to="/login"
+      >
         <v-icon>
           mdi-account-circle
         </v-icon>
