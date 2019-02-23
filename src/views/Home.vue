@@ -86,6 +86,11 @@ export default {
           icon: 'mdi-spotify',
           link: 'https://open.spotify.com/artist/1D14VtvKBELGGkmqhDCnwU',
         },
+        {
+          name: 'YouTube',
+          icon: 'mdi-youtube',
+          link: 'https://www.youtube.com/channel/UCt3LqA4zTzNaNj6JGTu45ZQ?view_as=subscriber',
+        },
       ],
     };
   },

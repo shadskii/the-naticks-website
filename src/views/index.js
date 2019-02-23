@@ -19,4 +19,9 @@ export default [
     link: '/booking',
     icon: 'mdi-music',
   },
+  {
+    name: 'FaNaticks',
+    link: '/fanaticks',
+    icon: 'mdi-music',
+  },
 ];
