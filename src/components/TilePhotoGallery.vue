@@ -22,8 +22,9 @@
                 tile
                 class="d-flex">
                 <v-img
-                  :src="`https://picsum.photos/500/300?image=${n * 5 + 10}`"
-                  :lazy-src="`https://picsum.photos/10/6?image=${n * 5 + 10}`"
+                  v-for="fan in fans"
+                  :key="fan.pic"
+                  :src="fan.pic"
                   aspect-ratio="1"
                   class="grey lighten-2"
                 >
@@ -48,11 +49,53 @@
   </v-layout>
 </template>
 <script>
-
+import image1 from '../assets/fanaticks1.jpg';
+import image2 from '../assets/fanaticks2.jpg';
+import image3 from '../assets/fanaticks3.jpg';
+import image4 from '../assets/fanaticks4.jpg';
+import image5 from '../assets/fanaticks5.jpg';
+import image6 from '../assets/fanaticks6.jpg';
+import image7 from '../assets/fanaticks7.jpg';
+import image8 from '../assets/fanaticks8.jpg';
 
 export default {
   data() {
     return {
+      fans: [
+        {
+          pic: image1,
+          name: 'fanaticks1',
+
+        },
+        {
+          pic: image2,
+          name: 'fanaticks2',
+        },
+        {
+          pic: image3,
+          name: 'fanaticks3',
+        },
+        {
+          pic: image4,
+          name: 'fanaticks4',
+        },
+        {
+          pic: image5,
+          name: 'fanaticks5',
+        },
+        {
+          pic: image6,
+          name: 'fanaticks6',
+        },
+        {
+          pic: image7,
+          name: 'fanaticks7',
+        },
+        {
+          pic: image8,
+          name: 'fanaticks8',
+        },
+      ],
 
     };
   },
