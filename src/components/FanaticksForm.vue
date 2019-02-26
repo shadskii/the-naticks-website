@@ -21,7 +21,7 @@
       v-else
       class="mx-auto">
       <v-card-title class="title font-weight-regular justify-space-between">
-        <span>Sign up for the FaNaticks mailing list or chat with us!</span>
+        <span>Sign up for the FaNaticks mailing list or send us a love note!</span>
       </v-card-title>
       <v-divider />
 

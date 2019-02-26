@@ -16,9 +16,7 @@
           sm8
           md6
         >
-          <h1>Without YOU, we would just be the aticks!</h1>
-          <br>
-          <h2>Sign up for our mailing list or chat with us below!</h2>
+          <h1 class="headline">Sign up for our mailing list below.</h1>
           <br>
           <fan-spotlight />
           <br>
