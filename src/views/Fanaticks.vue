@@ -17,12 +17,9 @@
           md6
         >
           <h1 class="headline">Sign up for our mailing list below.</h1>
-          <br>
-          <fan-spotlight />
-          <br>
-          <fanaticks-form />
-          <br>
-          <tile-photo-gallery />
+          <fan-spotlight class="py-5"/>
+          <fanaticks-form class="py-5"/>
+          <tile-photo-gallery class="py-5"/>
         </v-flex>
       </v-layout>
     </v-container>
