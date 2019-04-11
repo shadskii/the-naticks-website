@@ -5,6 +5,11 @@ export default [
     icon: 'mdi-home',
   },
   {
+    name: 'Book Us',
+    link: '/booking',
+    icon: 'mdi-music',
+  },
+  {
     name: 'Our Story',
     link: '/about',
     icon: 'mdi-account-multiple',
@@ -15,8 +20,8 @@ export default [
     icon: 'mdi-book-open-page-variant',
   },
   {
-    name: 'Book Us',
-    link: '/booking',
-    icon: 'mdi-music',
+    name: 'FaNaticks',
+    link: '/fanaticks',
+    icon: 'thumbs-up',
   },
 ];
