@@ -1,52 +1,42 @@
 <template>
-  <v-layout>
-    <v-flex
-      xs12
-      sm6
-      offset-sm3>
-      <v-card>
-        <v-container
-          grid-list-sm
-          fluid>
-          <v-layout
-            row
-            wrap>
-            <v-flex
-              v-for="n in 9"
-              :key="n"
-              xs4
-              d-flex
+  <v-container
+    grid-list-sm
+    fluid>
+    <v-layout
+      row
+      wrap>
+      <v-flex
+        v-for="fan in fans"
+        :key="fan.name"
+        xs6
+        sm4
+        md2
+        d-flex
+      >
+        <v-card
+          flat
+          tile
+          class="d-flex">
+          <v-img
+            :src="fan.pic"
+            class="grey lighten-2"
+          >
+            <v-layout
+              slot="placeholder"
+              fill-height
+              align-center
+              justify-center
+              ma-0
             >
-              <v-card
-                flat
-                tile
-                class="d-flex">
-                <v-img
-                  v-for="fan in fans"
-                  :key="fan.pic"
-                  :src="fan.pic"
-                  aspect-ratio="1"
-                  class="grey lighten-2"
-                >
-                  <v-layout
-                    slot="placeholder"
-                    fill-height
-                    align-center
-                    justify-center
-                    ma-0
-                  >
-                    <v-progress-circular
-                      indeterminate
-                      color="grey lighten-5"/>
-                  </v-layout>
-                </v-img>
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-card>
-    </v-flex>
-  </v-layout>
+              <v-progress-circular
+                indeterminate
+                color="grey lighten-5"/>
+            </v-layout>
+          </v-img>
+        </v-card>
+      </v-flex>
+    </v-layout>
+  </v-container>
 </template>
 <script>
 import image1 from '../assets/fanaticks1.jpg';
