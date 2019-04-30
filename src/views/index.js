@@ -22,6 +22,6 @@ export default [
   {
     name: 'FaNaticks',
     link: '/fanaticks',
-    icon: 'thumbs-up',
+    icon: 'mdi-heart',
   },
 ];
