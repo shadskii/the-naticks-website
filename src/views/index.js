@@ -6,7 +6,7 @@ export default [
   },
   {
     name: 'Book Us',
-    link: '/booking',
+    link: '/book_us',
     icon: 'mdi-music',
   },
   {

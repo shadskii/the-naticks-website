@@ -14,7 +14,7 @@ export default new Router({
     {
       path: '/book_us',
       name: 'Book Us',
-      component: () => import(/* webpackChunkName: "about" */ './views/Booking.vue'),
+      component: () => import(/* webpackChunkName: "booking" */ './views/Booking.vue'),
     },
     {
       path: '/fanaticks',
