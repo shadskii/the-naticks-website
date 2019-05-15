@@ -1,12 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-// import About from './views/About.vue';
-// import Blog from './views/Blog.vue';
-// import Booking from './views/Booking.vue';
-// import BlogGallery from './components/BlogGallery.vue';
-// import BlogPostDetail from './components/BlogPostDetail.vue';
+import About from './views/About.vue';
+import Blog from './views/Blog.vue';
+import Booking from './views/Booking.vue';
+import BlogGallery from './components/BlogGallery.vue';
+import BlogPostDetail from './components/BlogPostDetail.vue';
+import Fanaticks from './views/Fanaticks.vue';
 import firebase from 'firebase/app';
+
 
 Vue.use(Router);
 
@@ -20,34 +22,30 @@ const router = new Router({
     {
       path: '/book_us',
       name: 'Book Us',
-      component: () => import(/* webpackChunkName: "booking" */ './views/Booking.vue'),
+      component: Booking,
     },
     {
       path: '/fanaticks',
       name: 'FaNaticks',
-      component: () => import(/* webpackChunkName: "fanaticks" */ './views/Fanaticks.vue'),
+      component: Fanaticks,
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      component: About,
     },
     {
       path: '/blog',
-      component: () => import(/* webpackChunkName: "blog" */ './views/Blog.vue'),
+      component: Blog,
       children: [
         {
           path: '',
-          component: () => import(/* webpackChunkName: "blog-gallery" */ './components/BlogGallery.vue'),
+          component: BlogGallery,
         },
         {
           path: 'post/:id',
-          component: () => import(/* webpackChunkName: "blog-view" */ './components/BlogPostDetail.vue'),
+          component: BlogPostDetail,
         },
-
       ],
     },
     {
