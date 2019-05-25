@@ -1,7 +1,7 @@
 import '@babel/polyfill';
 import Vue from 'vue';
 import './plugins/vuetify';
-import VueFire from 'vuefire';
+import {firestorePlugin} from 'vuefire';
 import App from './App.vue';
 import 'roboto-fontface/css/roboto/roboto-fontface.css';
 import '@mdi/font/css/materialdesignicons.css';
@@ -11,7 +11,7 @@ import store from './store';
 import '@/firebase';
 
 Vue.config.productionTip = false;
-Vue.use(VueFire);
+Vue.use(firestorePlugin);
 
 new Vue({
   router,
