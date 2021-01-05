@@ -12,7 +12,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.2.5",
     "@mdi/font": "^3.3.92",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "firebase": "^5.11.1",
     "register-service-worker": "^1.0.0",
     "roboto-fontface": "*",
